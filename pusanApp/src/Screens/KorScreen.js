@@ -1,7 +1,7 @@
 /* eslint-disable */
 
 import React from "react";
-import {StyleSheet, Text, View, ImageBackground, Image, TouchableOpacity, Linking} from 'react-native';
+import {StyleSheet, Text, View, ImageBackground, Image, TouchableOpacity, Linking, Button} from 'react-native';
 
 function KorScreen({ navigation }) {
   return (
@@ -10,12 +10,12 @@ function KorScreen({ navigation }) {
     <View style={{flex: 1}}>
       <View style={{marginTop: '2%', flexDirection:'row',justifyContent: 'space-around', width:120, marginLeft:'70%', alignItems:'center'}}>
         <TouchableOpacity onPress={() => navigation.navigate("KorScreen")} style={{backgroundColor:'white', fontweight:'bold', borderRadius:8, 
-        paddingTop: 4, paddingBottom: 4, paddingRight: 10, paddingLeft: 10}}>
+          paddingTop: 4, paddingBottom: 4, paddingRight: 10, paddingLeft: 10}}>
           <Text style={{fontSize: 12, color: 'black', textAlign: 'center'}}>한국어</Text>
         </TouchableOpacity>
       
         <TouchableOpacity onPress={() => navigation.navigate("EngScreen")} style={{borderWidth: 1, borderStyle: 'solid', borderColor: 'white', fontweight:'bold', borderRadius:8,
-      paddingTop: 4, paddingBottom: 4, paddingRight: 12, paddingLeft: 12}}>
+          paddingTop: 4, paddingBottom: 4, paddingRight: 12, paddingLeft: 12}}>
           <Text style={{fontSize: 12, color: 'white', textAlign: 'center'}}>ENG</Text>
         </TouchableOpacity>
         </View>
@@ -72,7 +72,7 @@ function KorScreen({ navigation }) {
         </View>
       </TouchableOpacity>
 
-      <TouchableOpacity onPress={() => {Linking.openURL('https://dorm.pusan.ac.kr/');}}>
+      <TouchableOpacity onPress={() =>{ navigation.navigate('InqScreen'); }}>
         <View style={{width: 120, height: 180, borderRadius: 15, backgroundColor: 'white', alignItems: 'center', justifyContent: 'center'}}>
           <Image style={{width: 60, height: 60, resizeMode: 'contain', marginBottom:10}}
             source={require('../images/i5.png')}>
@@ -85,6 +85,7 @@ function KorScreen({ navigation }) {
         </View>
     </ImageBackground>
   );
+  
 }
 
 export default KorScreen;

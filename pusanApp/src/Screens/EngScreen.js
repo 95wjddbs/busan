@@ -10,12 +10,12 @@ function EngScreen({ navigation }) {
     <View style={{flex: 1}}>
       <View style={{marginTop: '2%', flexDirection:'row',justifyContent: 'space-around', width:120, marginLeft:'70%', alignItems:'center'}}>
         <TouchableOpacity onPress={() => navigation.navigate("KorScreen")} style={{borderWidth: 1, borderStyle: 'solid', borderColor: 'white', fontweight:'bold', borderRadius:8,
-      paddingTop: 4, paddingBottom: 4, paddingRight: 10, paddingLeft: 10}}>
+          paddingTop: 4, paddingBottom: 4, paddingRight: 10, paddingLeft: 10}}>
           <Text style={{fontSize: 12, color: 'white', textAlign: 'center'}}>한국어</Text>
         </TouchableOpacity>
       
         <TouchableOpacity onPress={() => navigation.navigate("EngScreen")} style={{backgroundColor:'white', fontweight:'bold', borderRadius:8, 
-        paddingTop: 4, paddingBottom: 4, paddingRight: 12, paddingLeft: 12}}>
+          paddingTop: 4, paddingBottom: 4, paddingRight: 12, paddingLeft: 12}}>
           <Text style={{fontSize: 12, color: 'black', textAlign: 'center'}}>ENG</Text>
         </TouchableOpacity>
         </View>
