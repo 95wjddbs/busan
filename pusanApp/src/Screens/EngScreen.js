@@ -8,19 +8,19 @@ function EngScreen({ navigation }) {
     <ImageBackground style={{flex:1}} source={require('../images/bg.jpg')}>
 
     <View style={{flex: 1}}>
-      <View style={{marginTop: '2%', flexDirection:'row',justifyContent: 'space-around', width:120, marginLeft:'70%', alignItems:'center'}}>
+      <View style={{flex:0.2, flexDirection:'row',justifyContent: 'space-around', width:'30%', marginLeft:'68%', alignItems:'center'}}>
         <TouchableOpacity onPress={() => navigation.navigate("KorScreen")} style={{borderWidth: 1, borderStyle: 'solid', borderColor: 'white', fontweight:'bold', borderRadius:8,
-          paddingTop: 4, paddingBottom: 4, paddingRight: 10, paddingLeft: 10}}>
+          paddingTop: 4, paddingBottom: 4, paddingRight: 10, paddingLeft: 10}} >
           <Text style={{fontSize: 12, color: 'white', textAlign: 'center'}}>한국어</Text>
         </TouchableOpacity>
       
         <TouchableOpacity onPress={() => navigation.navigate("EngScreen")} style={{backgroundColor:'white', fontweight:'bold', borderRadius:8, 
-          paddingTop: 4, paddingBottom: 4, paddingRight: 12, paddingLeft: 12}}>
+          paddingTop: 4, paddingBottom: 4, paddingRight: 12, paddingLeft: 12}} >
           <Text style={{fontSize: 12, color: 'black', textAlign: 'center'}}>ENG</Text>
         </TouchableOpacity>
         </View>
 
-        <View style={{marginTop: 40, marginBottom:40, flexDirection: 'row', alignItems: 'center', justifyContent: 'center',}}>
+        <View style={{flex:0.2, flexDirection: 'row', alignItems: 'center', justifyContent: 'center',}}>
           <Image style={{width: 60, height: 60, resizeMode: 'contain',}}
             source={require('../images/logo.png')}>
           </Image>
@@ -31,19 +31,19 @@ function EngScreen({ navigation }) {
           </View>
       </View>
 
-      <View style={{flex:1}}>
-      <View style={{flexDirection:'row',justifyContent:'space-around', marginTop:'5%', marginBottom:'5%'}}>
-        <TouchableOpacity onPress={() => {Linking.openURL('https://dorm.pusan.ac.kr/dorm/bbs/list05/20000401');}}>
-          <View style={{width: 180, height: 180, borderRadius: 15, backgroundColor: 'white', alignItems: 'center', justifyContent: 'center'}}>
+      <View style={{flex:2}}>
+      <View style={{flexDirection:'row',justifyContent:'space-around', marginTop:'5%', marginBottom:'5%', flex:1}} >
+        <TouchableOpacity onPress={() =>{ navigation.navigate('알림확인'); }}>
+          <View style={{flex:1, borderRadius: 15, backgroundColor: 'white', alignItems: 'center', justifyContent: 'center', paddingLeft:'13%',paddingRight:'13%'}}>
             <Image style={{width: 60, height: 60, resizeMode: 'contain', marginBottom:10}}
               source={require('../images/i1.png')}>
             </Image>
             <Text>Notifications</Text>
-          </View>             
+          </View>
         </TouchableOpacity>
 
         <TouchableOpacity onPress={() => {Linking.openURL('https://dorm.pusan.ac.kr/dorm/function/mealPlan/20000403');}}>
-          <View style={{width: 180, height: 180, borderRadius: 15, backgroundColor: 'white', alignItems: 'center', justifyContent: 'center'}}>
+          <View style={{flex:1, borderRadius: 15, backgroundColor: 'white', alignItems: 'center', justifyContent: 'center', paddingLeft:'15%',paddingRight:'15%'}}>
             <Image style={{width: 60, height: 60, resizeMode: 'contain', marginBottom:10}}
               source={require('../images/i2.png')}>
             </Image>
@@ -53,9 +53,9 @@ function EngScreen({ navigation }) {
       </View>
           
 
-    <View style={{flexDirection:'row',justifyContent:'space-around'}}>
+    <View style={{flex:1, flexDirection:'row',justifyContent:'space-around'}}>
       <TouchableOpacity onPress={() => {Linking.openURL('http://dorm.pusan.ac.kr/dorm/bbs/list01/20000601');}}>
-        <View style={{width: 120, height: 180, borderRadius: 15, backgroundColor: 'white', alignItems: 'center', justifyContent: 'center'}}>
+        <View style={{flex:1, borderRadius: 15, backgroundColor: 'white', alignItems: 'center', justifyContent: 'center', paddingLeft:'7.5%',paddingRight:'7.5%'}}>
           <Image style={{width: 60, height: 60, resizeMode: 'contain', marginBottom:10}}
             source={require('../images/i3.png')}>
           </Image>
@@ -64,7 +64,7 @@ function EngScreen({ navigation }) {
       </TouchableOpacity>
 
       <TouchableOpacity onPress={() => {Linking.openURL('https://dorm.pusan.ac.kr/dorm/bbs/list05/20000401');}}>
-        <View style={{width: 120, height: 180, borderRadius: 15, backgroundColor: 'white', alignItems: 'center', justifyContent: 'center'}}>
+        <View style={{flex:1, borderRadius: 15, backgroundColor: 'white', alignItems: 'center', justifyContent: 'center', paddingLeft:'7.5%',paddingRight:'7.5%'}}>
           <Image style={{width: 60, height: 60, resizeMode: 'contain', marginBottom:10}}
             source={require('../images/i4.png')}>
           </Image>
@@ -73,8 +73,8 @@ function EngScreen({ navigation }) {
         </View>
       </TouchableOpacity>
 
-      <TouchableOpacity onPress={() => {Linking.openURL('https://dorm.pusan.ac.kr/');}}>
-        <View style={{width: 120, height: 180, borderRadius: 15, backgroundColor: 'white', alignItems: 'center', justifyContent: 'center'}}>
+      <TouchableOpacity onPress={() =>{ navigation.navigate('이용문의'); }}>
+        <View style={{flex:1, flexDirection:'column', borderRadius: 15, backgroundColor: 'white', alignItems: 'center', justifyContent: 'center', paddingLeft:'7.5%',paddingRight:'7.5%'}}>
           <Image style={{width: 60, height: 60, resizeMode: 'contain', marginBottom:10}}
             source={require('../images/i5.png')}>
           </Image>
@@ -82,9 +82,11 @@ function EngScreen({ navigation }) {
         </View>
       </TouchableOpacity>
     </View>
+
+    <View style={{flex:0.5}} />
     </View>
         </View>
     </ImageBackground>
- );
+  );
 }
 export default EngScreen;
