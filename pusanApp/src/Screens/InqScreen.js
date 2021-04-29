@@ -4,9 +4,9 @@ import {StyleSheet, Text, View, ImageBackground, Image, TouchableOpacity, Linkin
 function 이용문의({}) {
     return (
       <ImageBackground style={{flex:1}} source={require('../images/bg2.png')}>
-      <View style={{flex: 1, marginLeft:"auto", marginRight:"auto"}}>
+      <View style={{flex: 1, marginLeft:"auto", marginRight:"auto", padding:"5%"}}>
 
-        <View style={{flex: 1, marginTop:"5%", alignItems:"baseline", flexWrap:"wrap"}}>
+        <View style={{flex: 1, alignItems:"baseline"}}>
           <Text style={{ color:"#000000", fontWeight:"bold", fontSize:16, marginBottom:"3%"}}>어플리케이션 안내 및 알림 수신 방법</Text>
           <Text style={{ color:"grey", marginLeft:"1%", fontSize:13}}>* 본 어플리케이션은 생활원 공지알림 수신을 위한 PUSH 전용</Text>
           <Text style={{ color:"grey", marginLeft:"1%", marginRight:"1%", fontSize:13}}>앱으로 생활원 알림을 수신하고자 하는 모든 분이 이용가능합니다.</Text>

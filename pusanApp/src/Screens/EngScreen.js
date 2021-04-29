@@ -73,7 +73,7 @@ function EngScreen({ navigation }) {
         </View>
       </TouchableOpacity>
 
-      <TouchableOpacity onPress={() =>{ navigation.navigate('이용문의'); }}>
+      <TouchableOpacity onPress={() =>{ navigation.navigate('Inquiries'); }}>
         <View style={{flex:1, flexDirection:'column', borderRadius: 15, backgroundColor: 'white', alignItems: 'center', justifyContent: 'center', paddingLeft:'7.5%',paddingRight:'7.5%'}}>
           <Image style={{width: 60, height: 60, resizeMode: 'contain', marginBottom:10}}
             source={require('../images/i5.png')}>
