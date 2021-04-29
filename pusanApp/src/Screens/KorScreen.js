@@ -1,6 +1,6 @@
 /* eslint-disable */
 
-import React from "react";
+import React, {useEffect} from "react";
 import {StyleSheet, View, ImageBackground, Image, TouchableOpacity, Linking, Button} from 'react-native';
 import { Container, Content, Text, Accordion } from "native-base";
 
@@ -36,7 +36,7 @@ function KorScreen({ navigation }) {
           </View>             
         </View>
 
-        <View style={styles.box1} onStartShouldSetResponder={() => props.navigation.navigate('Subpage2')}>
+        <View style={styles.box1} onStartShouldSetResponder={() => navigation.navigate('Subpage2')}>
           <View style={{height: 60}}>
             <Image style={{width: 60, height: 60, resizeMode: 'contain'}} source={require('../images/i2.png')}/>
             </View>
