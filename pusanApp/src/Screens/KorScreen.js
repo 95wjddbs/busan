@@ -1,94 +1,97 @@
 /* eslint-disable */
 
 import React from "react";
-import {StyleSheet, Text, View, ImageBackground, Image, TouchableOpacity, Linking, Button} from 'react-native';
+import {StyleSheet, View, ImageBackground, Image, TouchableOpacity, Linking, Button} from 'react-native';
+import { Container, Content, Text, Accordion } from "native-base";
 
 function KorScreen({ navigation }) {
   return (
     <ImageBackground style={{flex:1}} source={require('../images/bg.jpg')}>
 
-    <View style={{flex:1}}>
-      <View style={{flex:0.2, flexDirection:'row',justifyContent: 'space-around', width:'30%', marginLeft:'68%', alignItems:'center'}}>
+    <Container style={{ backgroundColor: null }}>
+    <Content padder>
+      <View style={{flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-end'}}>
         <TouchableOpacity onPress={() => navigation.navigate("KorScreen")} style={{backgroundColor:'white', fontweight:'bold', borderRadius:8, 
           paddingTop: 4, paddingBottom: 4, paddingRight: 10, paddingLeft: 10}}>
           <Text style={{fontSize: 12, color: 'black', textAlign: 'center'}}>한국어</Text>
         </TouchableOpacity>
       
         <TouchableOpacity onPress={() => navigation.navigate("EngScreen")} style={{borderWidth: 1, borderStyle: 'solid', borderColor: 'white', fontweight:'bold', borderRadius:8,
-          paddingTop: 4, paddingBottom: 4, paddingRight: 12, paddingLeft: 12}}>
+          paddingTop: 4, paddingBottom: 4, paddingRight: 12, paddingLeft: 12, marginLeft:5}}>
           <Text style={{fontSize: 12, color: 'white', textAlign: 'center'}}>ENG</Text>
         </TouchableOpacity>
         </View>
 
-        <View style={{flex:0.2, flexDirection: 'row', alignItems: 'center', justifyContent: 'center',}}>
-          <Image style={{width: 60, height: 60, resizeMode: 'contain',}}
-            source={require('../images/logo.png')}>
-          </Image>
-
-          <View>
-          <Text style={{ marginLeft: 8, fontSize: 24, color: 'white',}}>부산대학교 대학생활원</Text>
-          <Text style={{marginLeft: 8, fontSize: 12, color: 'white',}}>PUSAN NATIONAL UNIVERSITY DORMITORY</Text>
+        <View style={{flex: 1, padding: 30, justifyContent: 'center', alignItems: 'center'}}>
+          <Image style={{width: 300, height: 100, resizeMode: 'contain'}} source={require('../images/logo.png')}/>
           </View>
-      </View>
 
-      <View style={{flex:2}}>
-      <View style={{flexDirection:'row',justifyContent:'space-around', marginTop:'5%', marginBottom:'5%', flex:1}}>
-        <TouchableOpacity onPress={() =>{ navigation.navigate('알림확인'); }}>
-          <View style={{flex:1, borderRadius: 15, backgroundColor: 'white', alignItems: 'center', justifyContent: 'center', paddingLeft:'15%',paddingRight:'15%'}}>
-            <Image style={{width: 60, height: 60, resizeMode: 'contain', marginBottom:10}}
-              source={require('../images/i1.png')}>
-            </Image>
-            <Text>알림확인</Text>
+      <View style={{flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
+        <View style={[styles.box1, { marginRight: 15 }]} onStartShouldSetResponder={() => navigation.navigate('알림확인')}>
+          <View style={{height: 60}}>
+              <Image style={{width: 60, height: 60, resizeMode: 'contain'}} source={require('../images/i1.png')}/>
+          </View>
+            <View style={{height: 20, marginTop: 10 }}>
+            <Text style={styles.box_title}>알림확인</Text>
           </View>             
-        </TouchableOpacity>
+        </View>
 
-        <TouchableOpacity onPress={() => {Linking.openURL('https://dorm.pusan.ac.kr/dorm/function/mealPlan/20000403');}}>
-          <View style={{flex:1, borderRadius: 15, backgroundColor: 'white', alignItems: 'center', justifyContent: 'center', paddingLeft:'15%',paddingRight:'15%'}}>
-            <Image style={{width: 60, height: 60, resizeMode: 'contain', marginBottom:10}}
-              source={require('../images/i2.png')}>
-            </Image>
-            <Text>식단안내</Text>
+        <View style={styles.box1} onStartShouldSetResponder={() => props.navigation.navigate('Subpage2')}>
+          <View style={{height: 60}}>
+            <Image style={{width: 60, height: 60, resizeMode: 'contain'}} source={require('../images/i2.png')}/>
+            </View>
+            <View style={{height: 20, marginTop: 10 }}>
+              <Text style={styles.box_title}>식단안내</Text>
           </View>
-        </TouchableOpacity>
+        </View>
       </View>
           
 
-    <View style={{flex:1, flexDirection:'row',justifyContent:'space-around'}}>
-      <TouchableOpacity onPress={() => {Linking.openURL('http://dorm.pusan.ac.kr/dorm/bbs/list01/20000601');}}>
-        <View style={{flex:1, borderRadius: 15, backgroundColor: 'white', alignItems: 'center', justifyContent: 'center', paddingLeft:'7.5%',paddingRight:'7.5%'}}>
-          <Image style={{width: 60, height: 60, resizeMode: 'contain', marginBottom:10}}
-            source={require('../images/i3.png')}>
-          </Image>
-          <Text>공지사항</Text>
+    <View style={{flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', marginTop: 15 }}>
+      <View style={[styles.box1, { marginRight: 15 }]} onStartShouldSetResponder={() => {Linking.openURL('http://dorm.pusan.ac.kr/dorm/bbs/list01/20000601');}}>
+        <View style={{height: 60}}>
+          <Image style={{width: 60, height: 60, resizeMode: 'contain'}} source={require('../images/i3.png')}/>
+          </View>
+          <View style={{height: 20, marginTop: 10 }}>
+          <Text style={styles.box_title}>공지사항</Text>
         </View>
-      </TouchableOpacity>
+      </View>
 
-      <TouchableOpacity onPress={() => {Linking.openURL('https://dorm.pusan.ac.kr/dorm/bbs/list05/20000401');}}>
-        <View style={{flex:1, borderRadius: 15, backgroundColor: 'white', alignItems: 'center', justifyContent: 'center', paddingLeft:'7.5%',paddingRight:'7.5%'}}>
-          <Image style={{width: 60, height: 60, resizeMode: 'contain', marginBottom:10}}
-            source={require('../images/i4.png')}>
-          </Image>
-          <Text>원생수칙</Text>
+      <View style={[styles.box1, { marginRight: 15 }]} onStartShouldSetResponder={() => {Linking.openURL('https://dorm.pusan.ac.kr/dorm/bbs/list05/20000401');}}>
+        <View style={{height: 60}}>
+          <Image style={{width: 60, height: 60, resizeMode: 'contain', marginBottom:10}} source={require('../images/i4.png')}/>         
+          </View>
+          <View style={{height: 20, marginTop: 10 }}>
+          <Text style={styles.box_title}>원생수칙</Text>
         </View>
-      </TouchableOpacity>
+      </View>
 
-      <TouchableOpacity onPress={() =>{ navigation.navigate('이용문의'); }}>
-        <View style={{flex:1, flexDirection:'column', borderRadius: 15, backgroundColor: 'white', alignItems: 'center', justifyContent: 'center', paddingLeft:'7.5%',paddingRight:'7.5%'}}>
-          <Image style={{width: 60, height: 60, resizeMode: 'contain', marginBottom:10}}
-            source={require('../images/i5.png')}>
-          </Image>
-          <Text>이용문의</Text>
+      <View style={[styles.box1]} onStartShouldSetResponder={() =>{ navigation.navigate('이용문의'); }}>
+        <View style={{height:60}}>
+          <Image style={{width: 60, height: 60, resizeMode: 'contain', marginBottom:10}} source={require('../images/i5.png')}/>
+          </View>
+          <View style={{height: 20, marginTop: 10 }}>
+          <Text style={styles.box_title}>이용문의</Text>
         </View>
-      </TouchableOpacity>
+      </View>
     </View>
 
     <View style={{flex:0.5}} />
-    </View>
-        </View>
+    </Content>
+    </Container>
     </ImageBackground>
   );
   
 }
+
+const styles = StyleSheet.create({
+  box1: {
+      flex:1, flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: 200, backgroundColor: '#fefefe', borderRadius: 12
+  },
+  box_title: {
+      fontWeight: 'bold', fontSize: 16, color: '#333333'
+  }
+});
 
 export default KorScreen;
 
