@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import {StyleSheet, Text, View, ImageBackground, Image, TouchableOpacity, Linking, Button, StatusBar} from 'react-native';
 import { BtnFill, Btn_on, Btn_off } from './Custom_button';
 
-function 이용문의({}) {
+function InqScreen({}) {
     return (
       <View style={{padding: 20}}>
 
@@ -30,4 +30,4 @@ function 이용문의({}) {
     );
   }
   
-  export default 이용문의;
+  export default InqScreen;
