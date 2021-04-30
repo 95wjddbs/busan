@@ -2,7 +2,7 @@
 
 import React from "react";
 import {StyleSheet, View, ImageBackground, Image, TouchableOpacity, Linking, Button} from 'react-native';
-import { Container, Content, Text, Accordion } from "native-base";
+import { Container, Content, Text } from "native-base";
 
 function EngScreen({ navigation }) {
   return (

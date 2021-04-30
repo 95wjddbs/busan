@@ -1,5 +1,5 @@
-import React, { Fragment } from "react";
-import {StyleSheet, Text, View, ImageBackground, Image, TouchableOpacity, Linking, Button, StatusBar} from 'react-native';
+import React from "react";
+import {StyleSheet, Text, View, Linking} from 'react-native';
 import { BtnFill, Btn_on, Btn_off } from './Custom_button';
 
 function 이용문의({}) {
