@@ -10,6 +10,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@react-native-community/netinfo": "6.0.0",
     "@react-navigation/native": "5.9.4",
     "@react-navigation/stack": "5.14.4",
     "axios": "0.21.1",
@@ -23,7 +24,8 @@
     "react-native-reanimated": "2.1.0",
     "react-native-safe-area-context": "3.2.0",
     "react-native-screens": "3.1.1",
-    "react-native-splash-screen": "3.2.0"
+    "react-native-splash-screen": "3.2.0",
+    "react-native-webview": "11.4.3"
   },
   "devDependencies": {
     "@babel/core": "7.13.16",

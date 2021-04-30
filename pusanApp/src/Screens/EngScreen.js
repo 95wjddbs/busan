@@ -27,7 +27,7 @@ function EngScreen({ navigation }) {
           </View>
 
       <View style={{flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
-        <View style={[styles.box1, { marginRight: 15 }]} onStartShouldSetResponder={() => navigation.navigate('알림확인')}>
+        <View style={[styles.box1, { marginRight: 15 }]} onStartShouldSetResponder={() => navigation.navigate('Subpage1-1')}>
           <View style={{height: 60}}>
               <Image style={{width: 60, height: 60, resizeMode: 'contain'}} source={require('../images/i1.png')}/>
           </View>
@@ -36,7 +36,7 @@ function EngScreen({ navigation }) {
           </View>             
         </View>
 
-        <View style={styles.box1} onStartShouldSetResponder={() => props.navigation.navigate('Subpage2')}>
+        <View style={styles.box1} onStartShouldSetResponder={() => navigation.navigate('Subpage2-1')}>
           <View style={{height: 60}}>
             <Image style={{width: 60, height: 60, resizeMode: 'contain'}} source={require('../images/i2.png')}/>
             </View>
@@ -48,7 +48,7 @@ function EngScreen({ navigation }) {
           
 
     <View style={{flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', marginTop: 15 }}>
-      <View style={[styles.box1, { marginRight: 15 }]} onStartShouldSetResponder={() => {Linking.openURL('http://dorm.pusan.ac.kr/dorm/bbs/list01/20000601');}}>
+    <View style={[styles.box1, { marginRight: 15 }]} onStartShouldSetResponder={() => navigation.navigate('Subpage3-1')}>
         <View style={{height: 60}}>
           <Image style={{width: 60, height: 60, resizeMode: 'contain'}} source={require('../images/i3.png')}/>
           </View>
@@ -57,7 +57,7 @@ function EngScreen({ navigation }) {
         </View>
       </View>
 
-      <View style={[styles.box1, { marginRight: 15 }]} onStartShouldSetResponder={() => {Linking.openURL('https://dorm.pusan.ac.kr/dorm/bbs/list05/20000401');}}>
+      <View style={[styles.box1, { marginRight: 15 }]} onStartShouldSetResponder={() => navigation.navigate('Subpage4-1')}>
         <View style={{height: 60}}>
           <Image style={{width: 60, height: 60, resizeMode: 'contain', marginBottom:10}} source={require('../images/i4.png')}/>         
           </View>
@@ -67,7 +67,7 @@ function EngScreen({ navigation }) {
         </View>
       </View>
 
-      <View style={[styles.box1]} onStartShouldSetResponder={() =>{ navigation.navigate('Inquiries'); }}>
+      <View style={[styles.box1]} onStartShouldSetResponder={() =>{ navigation.navigate('Subpage5-1'); }}>
         <View style={{height:60}}>
           <Image style={{width: 60, height: 60, resizeMode: 'contain', marginBottom:10}} source={require('../images/i5.png')}/>
           </View>
