@@ -15,7 +15,7 @@ import Subpage1 from "./src/Screens/Subpage1";
 
 const Stack = createStackNavigator();
 
-const App = (props) => {
+const App = () => {
   SplashScreen.hide();
 
   function MainPage(props){
@@ -33,7 +33,7 @@ const App = (props) => {
           <Image style={{width: 300, height: 100, resizeMode: 'contain'}} source={require('./src/images/logo.png')}/>
         </View>
         <View style={{flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
-          <View style={[styles.box1, { marginRight: 15 }]} onStartShouldSetResponder={() => props.navigation.navigate('Subpage1')}>
+          <View style={[styles.box1, { marginRight: 15 }]} onStartShouldSetResponder={() => props.navigation.navigate('Subpage1', {lang_to: lang_to, mt_idx: mt_idx, mt_status: mt_status})}>
             <View style={{height: 60}}>
                 <Image style={{width: 60, height: 60, resizeMode: 'contain'}} source={require('./src/images/i1.png')}/>
             </View>
@@ -86,6 +86,27 @@ const App = (props) => {
     );
 
   }
+
+    const [mt_idx, set_mt_idx] = useState();
+    const [mt_status, set_mt_status] = useState();
+
+    async function getInstanceId(props) {
+        const id = await iid().get();
+        const token = await firebase.iid().getToken();
+
+        if(token) {
+            Axios.post('http://dmonster1270.cafe24.com/bnu_get_token.php', {
+                instance_id_t: id,
+                token_t: token,
+            })
+            .then(function (response) {
+                props.set_mt_idx(response.data.mt_idx);
+                props.set_mt_status(response.data.mt_status);
+            });
+        }
+    }
+    getInstanceId({set_mt_idx, set_mt_status});
+
 
   const [lang, setLang] = useState('kor');
 
