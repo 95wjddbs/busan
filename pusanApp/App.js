@@ -18,9 +18,18 @@ const Stack = createStackNavigator();
 const App = () => {
   SplashScreen.hide();
 
+  let { width, height } = Dimensions.get('window');
+
+  const [lang, setLang] = useState('kor');
+
+  let lang_to;
+  if(lang === 'kor'){ 
+    lang_to = ConfigData.kor; } else{
+    lang_to = ConfigData.eng; }
+
   function MainPage(props){
     return (
-      <ImageBackground style={{flex:1}} source={require('./src/images/bg.jpg')}>
+      <ImageBackground style={{width, height}} source={require('./src/images/bg.jpg')}>
   
       <Container style={{ backgroundColor: null }}>
       <Content padder>
@@ -32,15 +41,17 @@ const App = () => {
         <View style={{flex: 1, padding: 30, justifyContent: 'center', alignItems: 'center'}}>
           <Image style={{width: 300, height: 100, resizeMode: 'contain'}} source={require('./src/images/logo.png')}/>
         </View>
+
         <View style={{flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
           <View style={[styles.box1, { marginRight: 15 }]} onStartShouldSetResponder={() => props.navigation.navigate('Subpage1', {lang_to: lang_to, mt_idx: mt_idx, mt_status: mt_status})}>
             <View style={{height: 60}}>
                 <Image style={{width: 60, height: 60, resizeMode: 'contain'}} source={require('./src/images/i1.png')}/>
             </View>
               <View style={{height: 20, marginTop: 10 }}>
-              <Text style={styles.box_title}>{lang_to.main_title1}</Text>
+                <Text style={styles.box_title}>{lang_to.main_title1}</Text>
             </View>             
           </View>
+
           <View style={styles.box1} onStartShouldSetResponder={() => props.navigation.navigate('Subpage2')}>
             <View style={{height: 60}}>
               <Image style={{width: 60, height: 60, resizeMode: 'contain'}} source={require('./src/images/i2.png')}/>
@@ -50,13 +61,14 @@ const App = () => {
             </View>
           </View>
         </View>
+
       <View style={{flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', marginTop: 15 }}>
         <View style={[styles.box1, { marginRight: 15 }]} onStartShouldSetResponder={() => props.navigation.navigate('Subpage3')}>
           <View style={{height: 60}}>
             <Image style={{width: 60, height: 60, resizeMode: 'contain'}} source={require('./src/images/i3.png')}/>
             </View>
             <View style={{height: 20, marginTop: 10 }}>
-            <Text style={styles.box_title}>{lang_to.main_title3}</Text>
+              <Text style={styles.box_title}>{lang_to.main_title3}</Text>
           </View>
         </View>
   
@@ -65,7 +77,7 @@ const App = () => {
             <Image style={{width: 60, height: 60, resizeMode: 'contain', marginBottom:10}} source={require('./src/images/i4.png')}/>         
             </View>
             <View style={{height: 20, marginTop: 10 }}>
-            <Text style={styles.box_title}>{lang_to.main_title4}</Text>
+              <Text style={styles.box_title}>{lang_to.main_title4}</Text>
           </View>
         </View>
   
@@ -74,7 +86,7 @@ const App = () => {
             <Image style={{width: 60, height: 60, resizeMode: 'contain', marginBottom:10}} source={require('./src/images/i5.png')}/>
             </View>
             <View style={{height: 20, marginTop: 10 }}>
-            <Text style={styles.box_title}>{lang_to.main_title5}</Text>
+              <Text style={styles.box_title}>{lang_to.main_title5}</Text>
           </View>
         </View>
       </View>
@@ -97,26 +109,16 @@ const App = () => {
         if(token) {
             Axios.post('http://dmonster1270.cafe24.com/bnu_get_token.php', {
                 instance_id_t: id,
-                token_t: token,
+                token_t: token
             })
             .then(function (response) {
                 props.set_mt_idx(response.data.mt_idx);
                 props.set_mt_status(response.data.mt_status);
-            });
+            })
+            .catch(err => {console.log(err)})
         }
     }
     getInstanceId({set_mt_idx, set_mt_status});
-
-
-  const [lang, setLang] = useState('kor');
-
-  let lang_to;
-  if(lang === 'kor'){
-    lang_to = ConfigData.kor;
-  } else{
-    lang_to = ConfigData.eng;
-  }
-
 
   const Subpage2 = () => {
     const [isConnected, setConnected] = useState(true);
@@ -124,7 +126,7 @@ const App = () => {
     useEffect(() => {
         NetInfo.fetch()
         .then(state => { setConnected(state.isConnected) })
-        .catch(err => console.log(err))
+        .catch(err => {console.log(err)})
     });
   
     if(isConnected) {
@@ -146,7 +148,7 @@ const App = () => {
     useEffect(() => {
         NetInfo.fetch()
           .then(state => { setConnected(state.isconnet) })
-          .catch(err => console.log(err))
+          .catch(err => {console.log(err)})
         });
   
     if(isconnet) {
@@ -168,7 +170,7 @@ const App = () => {
     useEffect(() => {
         NetInfo.fetch()
           .then(state => { setConnected(state.isconnet) })
-          .catch(err => console.log(err))
+          .catch(err => {console.log(err)})
         });
   
     if(isconnet) {
@@ -184,11 +186,12 @@ const App = () => {
     }
   }
 
-  function InqScreen({}) {
+  function Subpage5({}) {
     return (
       <View style={{padding: 20}}>
 
           <Text style={{ fontSize: 18, fontWeight: "bold"}}>{lang_to.sub_page5_t1}</Text>
+
           <Text style={{ fontSize: 13, color: "#666666", paddingLeft: 10, paddingTop: 10}}>{lang_to.sub_page5_t1_t1}</Text>
           <Text style={{ fontSize: 13, color: "#666666", paddingLeft: 10, paddingTop: 10}}>{lang_to.sub_page5_t1_t2}</Text>
 
@@ -215,12 +218,12 @@ const App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="MainPage">
-        <Stack.Screen name="MainPage" options={{headerShown: false, title: ''}} component={MainPage} />
+        <Stack.Screen name="MainPage" options={{headerShown: false}} component={MainPage} />
         <Stack.Screen name="Subpage1" options={{ title: lang_to.main_title1 }} component={Subpage1}/>
         <Stack.Screen name="Subpage2" options={{ title: lang_to.main_title2 }} component={Subpage2} />
         <Stack.Screen name="Subpage3" options={{ title: lang_to.main_title3 }} component={Subpage3} />
         <Stack.Screen name="Subpage4" options={{ title: lang_to.main_title4 }} component={Subpage4} />
-        <Stack.Screen name="Subpage5" options={{ title: lang_to.main_title5 }} component={InqScreen}/>
+        <Stack.Screen name="Subpage5" options={{ title: lang_to.main_title5 }} component={Subpage5}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

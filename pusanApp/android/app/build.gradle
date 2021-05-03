@@ -132,6 +132,9 @@ android {
     }
 
     defaultConfig {
+        ndk {
+         abiFilters "armeabi-v7a", "x86"
+    }
         applicationId "com.pusanapp"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion

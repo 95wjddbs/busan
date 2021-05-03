@@ -1,8 +1,6 @@
 /**
  * @format
  */
-
-import NetInfo from "@react-native-community/netinfo";
 import "react-native-get-random-values"
 import {AppRegistry} from 'react-native';
 import App from './App';

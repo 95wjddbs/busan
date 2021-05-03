@@ -27,28 +27,27 @@ function Subpage1(props) {
     function getMoviesFromApi() {
         Axios.post('http://dmonster1270.cafe24.com/bnu_notice_json.php', {
             pg: '1',
-            mt_idx: mt_idx,
+            mt_idx: mt_idx
         })
         .then(function (response) {
             setData(response.data.list_data);
             response.data.mt_status=='Y' ? setIsEnabled(true) : setIsEnabled(false)
             set_isOn(false)
         })
-        .catch(err => console.log(err))
-        .finally(() => setLoading(false));
+        .catch(err => {console.log(err)})
+        .finally(() => {setLoading(false)})
     }
 
     function chg_notice_setting(props) {
         Axios.post('http://dmonster1270.cafe24.com/bnu_push_update.php', {
             mt_idx: mt_idx,
-            mt_status: props,
+            mt_status: props
         })
         .then(function (response) {
-
             setIsEnabled(response.data.result)
         })
-        .catch(err => console.log(err))
-        .finally(() => setLoading(false));
+        .catch(err => {console.log(err)})
+        .finally(() => {setLoading(false)})
     }
 
     function Acc_rend_head(item, expanded) {
