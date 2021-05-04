@@ -1,4 +1,3 @@
-/* eslint-disable */
 import "react-native-gesture-handler";
 import React,{useState, useEffect} from "react";
 import {View, StyleSheet, ImageBackground, Image, Linking, Button, Dimensions} from "react-native";
@@ -35,9 +34,9 @@ const App = () => {
       <Content padder>
         <View style={{flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-end'}}>
           <Btn title="한국어" isOn={lang==='kor'} onPress={() => setLang('kor')} />
-          <Btn title="ENG" style={{marginLeft:5}} isOn={lang==='eng'} onPress={() => setLang('eng')} />
+          <Btn title="ENG" isOn={lang==='eng'} onPress={() => setLang('eng')} style={{marginLeft:5}} />
         </View>  
-
+n
         <View style={{flex: 1, padding: 30, justifyContent: 'center', alignItems: 'center'}}>
           <Image style={{width: 300, height: 100, resizeMode: 'contain'}} source={require('./src/images/logo.png')}/>
         </View>
@@ -142,7 +141,7 @@ const App = () => {
     }
   }
   
-  function Subpage3({}) {
+  function Subpage3(){
     const isconnet = true;
   
     useEffect(() => {
@@ -189,12 +188,9 @@ const App = () => {
   function Subpage5({}) {
     return (
       <View style={{padding: 20}}>
-
           <Text style={{ fontSize: 18, fontWeight: "bold"}}>{lang_to.sub_page5_t1}</Text>
-
           <Text style={{ fontSize: 13, color: "#666666", paddingLeft: 10, paddingTop: 10}}>{lang_to.sub_page5_t1_t1}</Text>
           <Text style={{ fontSize: 13, color: "#666666", paddingLeft: 10, paddingTop: 10}}>{lang_to.sub_page5_t1_t2}</Text>
-
           <Text style={{ fontSize: 18, fontWeight: "bold", marginTop:30}}>{lang_to.sub_page4_t1}</Text>
 
           <View style={{ marginTop: 15 }}>

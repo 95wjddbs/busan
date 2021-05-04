@@ -1,4 +1,3 @@
-/* eslint-disable */
 import React, { useState, useEffect } from "react";
 import Axios from 'axios';
 import { View, Switch, StyleSheet, Text, SafeAreaView, ActivityIndicator, Linking } from "react-native";
@@ -113,8 +112,7 @@ function Subpage1(props) {
             <SafeAreaView>
               {isLoading ? <ActivityIndicator/> : (
                   <Accordion dataArray={data_movie} expanded={[]}
-                  renderHeader={Acc_rend_head} renderContent={Acc_rend_content} style={{border:0}} />
-                  
+                  renderHeader={Acc_rend_head} renderContent={Acc_rend_content} style={{border:0}} />                  
               )}
             </SafeAreaView>
           </View>

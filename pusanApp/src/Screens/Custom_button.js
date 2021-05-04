@@ -1,6 +1,14 @@
-/* eslint-disable */
 import React from 'react';
 import { TouchableOpacity, StyleSheet, Text } from 'react-native';
+
+export const Btn = (props) => {
+    const { title = 'Enter', style = {}, textStyle = {}, onPress, isOn } = props;
+    return (
+        <TouchableOpacity onPress={onPress} style={[isOn? styles.btn_on: styles.btn_off, style]}>
+            <Text style={[isOn? styles.btn_on_text: styles.btn_off_text, textStyle]}>{props.title}</Text>
+        </TouchableOpacity>
+    );
+};
 
 export const BtnOutlineWhite = (props) => {
     const { title = 'Enter', style = {}, textStyle = {}, onPress } = props;
@@ -25,15 +33,6 @@ export const BtnFillgray = (props) => {
     return (
         <TouchableOpacity onPress={onPress} style={[styles.buttonFillgray, style]}>
             <Text style={[styles.text, textStyle]}>{props.title}</Text>
-        </TouchableOpacity>
-    );
-};
-
-export const Btn = (props) => {
-    const { title = 'Enter', style = {}, textStyle = {}, onPress, isOn } = props;
-    return (
-        <TouchableOpacity onPress={onPress} style={[isOn? styles.btn_on: styles.btn_off, style]}>
-            <Text style={[isOn? styles.btn_on_text: styles.btn_off_text, textStyle]}>{props.title}</Text>
         </TouchableOpacity>
     );
 };
