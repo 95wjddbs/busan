@@ -1,8 +1,8 @@
 /* eslint-disable */
 import React, { useState, useEffect } from "react";
 import Axios from 'axios';
-import { View, Switch, StyleSheet, Text, SafeAreaView, FlatList, ActivityIndicator, Dimensions, Linking } from "react-native";
-import { Container, Header, Content, Accordion, Icon } from "native-base";
+import { View, Switch, StyleSheet, Text, SafeAreaView, ActivityIndicator, Linking } from "react-native";
+import { Accordion, Icon } from "native-base";
 import { WebView } from 'react-native-webview';
 import 'react-native-get-random-values';
 
